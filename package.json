@@ -1,0 +1,17 @@
+{
+  "name": "image",
+  "version": "1.0.0",
+  "description": "",
+  "main": "googleSearch.js",
+  "scripts": {
+    "start":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bing.search": "^1.0.1",
+    "dotenv": "^2.0.0",
+    "util": "^0.10.3"
+  }
+}
