@@ -1,6 +1,7 @@
 const express = require('express');
 const util = require('util');
 const mongo = require('mongodb');
+const path = require('path');
 require('dotenv').config({
   silent: true
 });
@@ -30,7 +31,7 @@ mongo.MongoClient.connect(url_mongo,function(err,db){
       console.log("Sent file index.html success!");
     })
   })
-  
+
   app.get('/api/imagesearch/:query',function(req,res){
     var query=req.params.query;
     var size=req.query.offset||10;
