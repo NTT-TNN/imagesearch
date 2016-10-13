@@ -22,6 +22,15 @@ mongo.MongoClient.connect(url_mongo,function(err,db){
     max:10000
   })
 
+
+  app.get('/',function(req,res){
+    var fileName=path.join(__dirname,"index.html");
+    res.sendFile(fileName,function(err){
+      if(err) throw err;
+      console.log("Sent file index.html success!");
+    })
+  })
+  
   app.get('/api/imagesearch/:query',function(req,res){
     var query=req.params.query;
     var size=req.query.offset||10;
