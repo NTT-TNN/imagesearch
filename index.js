@@ -8,6 +8,8 @@ require('dotenv').config({
 var url_mongo="mongodb://lebaochi:lebaochi1809@ds057386.mlab.com:57386/imagesearch"
 const bingSearch = require('bing.search');
 
+var port=process.env.PORT||3500;
+
 var app=express();
 var bing=new bingSearch("7NIsp9AybAlaVSaWIKUlyUKZ0JlwOpkoelitr/gSeNI")
 
@@ -50,7 +52,6 @@ mongo.MongoClient.connect(url_mongo,function(err,db){
   app.get('/lastest',function(req,res){
     db.collection("histories").find({}).toArray (function(err,data){
       if(err) throw err;
-
       res.send(data);
     })
   })
@@ -58,6 +59,6 @@ mongo.MongoClient.connect(url_mongo,function(err,db){
 
 
 
-app.listen(3500,function(){
+app.listen(port,function(){
   console.log("App running at port 3500");
 });
